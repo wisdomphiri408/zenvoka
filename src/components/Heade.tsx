@@ -5,18 +5,20 @@ import { ModeToggle } from "./theme-toggle";
 
 const Header: NextPage = () => {
     return(
-        <div>
-            <div>Zenvoka</div>
-            <div>
+        <div className="flex justify-between md:justify-center">
+            <div className="border-1">
+                Zenvoka
+            </div>
+            <div className="border-2 border-amber-500">
                 <Link href={'/'}>Home</Link>
                 <Link href={'/products'}>Products</Link>
                 <Link href={'/categories'}>Categories</Link>
             </div>
-            <div>
+            <div className="border-2 border-green-500">
                 <Search />
                 <input type="search" placeholder="search products..."/>
             </div>
-            <div>
+            <div className="border-2 border-red-500">
                 <ModeToggle />
                 <Link href={'/cart'}>
                     <ShoppingCart />
