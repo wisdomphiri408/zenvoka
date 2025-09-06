@@ -7,7 +7,7 @@ import SearchBar from "./searchBar";
 
 const Header: NextPage = () => {
     return(
-        <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center">
+        <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center border-b-1 border-light-border dark:border-dark-border py-4">
             <div>
                 <Link href={'/'} className="text-2xl font-bold ">Zenvoka</Link>
             </div>
@@ -22,16 +22,19 @@ const Header: NextPage = () => {
                     <Link href={'/categories'}>Categories</Link>
                 </p>
             </div>
-            <div className="">
+            <div>
                 <SearchBar />
             </div>
-            <div>
+            <div className="flex gap-6 items-center">
                 <ModeToggle />
+                <div className="relative">
                 <Link href={'/cart'}>
-                    <ShoppingCart />
+                    <ShoppingCart className="w-4 h-4"/>
                 </Link>
+                <div className="absolute -top-3 -right-4 bg-black dark:bg-gray-100 dark:text-black text-white text-xs rounded-full px-1.5 py-0.5">3</div>
+                </div>
                 <Link href={'/profile'}>
-                    <User />
+                    <User className="w-4 h-4"/>
                 </Link>
             </div>
         </div>
