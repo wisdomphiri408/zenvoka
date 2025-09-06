@@ -12,7 +12,7 @@ const NotFound: NextPage = () => {
             <h1 className="text-display-lg text-gray-300 font-bold">404</h1>
             <h2 className="text-h3">Page Not Found</h2>
             <p className="max-w-[340px] text-body text-gray-500 mb-4">
-                Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or the URL might be incorrect.
+                Sorry, we couldn&lsquo;t find the page you&lsquo;re looking for. It might have been moved, deleted, or the URL might be incorrect.
             </p>
             <p>
                 <Link href={'/'}>
