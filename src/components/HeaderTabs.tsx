@@ -17,7 +17,7 @@ const HeaderTabs: NextPage = () => {
             <Link href={'/products'} className={`${activeTab('/products')}`}>Products</Link>
         </p>
         <p>
-            <Link href={'/categories'} className={`/categories`}>Categories</Link>
+            <Link href={'/categories'} className={`${activeTab('/categories')}`}>Categories</Link>
         </p>
     </div>
     )

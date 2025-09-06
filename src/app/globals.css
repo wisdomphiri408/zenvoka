@@ -17,6 +17,11 @@
   --text-h5: clamp(1rem, 0.4rem + 1vw, 1.25rem);
   --text-h6: clamp(0.875rem, 0.3rem + 0.8vw, 1rem);
 
+  /* Display text (oversized headings for special pages) */
+  --text-display-sm: clamp(2.5rem, 1.5rem + 6vw, 4rem);   /* small hero / section titles */
+  --text-display-md: clamp(3rem, 2rem + 8vw, 6rem);       /* main hero text */
+  --text-display-lg: clamp(4rem, 3rem + 10vw, 9rem);      /* super headline / 404 */
+
   /* Paragraphs-fluids */
   --text-body: clamp(1rem, 0.8rem + 1vw, 1.25rem);
   --text-small: clamp(0.875rem, 0.7rem + 0.5vw, 1rem);
@@ -57,6 +62,25 @@
   line-height: 1.6;
   font-weight: 500;
 }
+.text-display-sm {
+  font-size: var(--text-display-sm);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.text-display-md {
+  font-size: var(--text-display-md);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.text-display-lg {
+  font-size: var(--text-display-lg);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+
 
 .text-body {
   font-size: var(--text-body);
