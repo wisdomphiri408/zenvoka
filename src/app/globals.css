@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --gap-fluid: min(8vw, 200px);
 }
 
 .dark {
@@ -16,6 +17,11 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
 
 body {
   @apply bg-background text-foreground;
