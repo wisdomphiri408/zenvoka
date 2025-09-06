@@ -16,14 +16,18 @@ const SearchBar: NextPage = () => {
     return(
         <div>
             <form onSubmit={handleSearch}>
-                <Search />
+                <div className="flex items-center">
+                <Search
+                onClick={handleSearch} 
+                className="z-10"/>
                 <InputField 
                 type="search"
                 value={search}
                 onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
                 placeholder="search products..."
-                className=""
+                className="ml-[-28px] w-[var(--input-fluid)] pl-[28px]"
                 />
+                </div>
             </form>
         </div>
     )

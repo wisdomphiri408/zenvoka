@@ -5,6 +5,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --gap-fluid: min(8vw, 200px);
+  --input-fluid: min(20vw, 1000px);
 }
 
 .dark {
@@ -17,6 +18,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --color-field-backgroung: #121212;
 }
 
 .flex-center {
