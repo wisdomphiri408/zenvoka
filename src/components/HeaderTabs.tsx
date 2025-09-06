@@ -9,7 +9,7 @@ const HeaderTabs: NextPage = () => {
     const activeTab = (href: string) => pathname === href ? 'font-semibold' : 'font-normal';
 
     return(
-    <div className="flex gap-6">
+    <div className="hidden md:flex gap-6 ">
         <p>
             <Link href={'/'} className={`${activeTab('/')}`}>Home</Link>
         </p>

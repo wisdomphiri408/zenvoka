@@ -4,10 +4,11 @@ import { ShoppingCart, User } from "lucide-react";
 import { ModeToggle } from "./theme-toggle";
 import SearchBar from "./searchBar";
 import HeaderTabs from "./HeaderTabs";
+import { Menu } from "lucide-react";
 
 const Header: NextPage = () => {
     return(
-        <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center border-b-1 border-light-border dark:border-dark-border py-4 backdrop-blur">
+        <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center border-b-1 border-light-border dark:border-dark-border py-4 backdrop-blur px-2">
             <div>
                 <Link href={'/'} className="text-2xl font-bold ">Zenvoka</Link>
             </div>
@@ -26,6 +27,9 @@ const Header: NextPage = () => {
                 <Link href={'/profile'}>
                     <User className="w-4 h-4"/>
                 </Link>
+                <p>
+                    <Menu className="block md:hidden w-4 h-4" />
+                </p>
             </div>
         </div>
     )
