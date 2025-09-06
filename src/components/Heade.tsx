@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import { Search,ShoppingCart, User } from "lucide-react";
+import { ShoppingCart, User } from "lucide-react";
 import { ModeToggle } from "./theme-toggle";
+import InputField from "./Inputfield";
+import SearchBar from "./searchBar";
 
 const Header: NextPage = () => {
     return(
@@ -21,8 +23,7 @@ const Header: NextPage = () => {
                 </p>
             </div>
             <div className="">
-                <Search />
-                <input type="search" placeholder="search products..."/>
+                <SearchBar />
             </div>
             <div>
                 <ModeToggle />
