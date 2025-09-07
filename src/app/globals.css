@@ -108,9 +108,9 @@
   --color-field-backgroung: #121212;
   --color-dark-border: #2a2a2a;
   --color-light-border:#e5e7eb;
-  --color-light-gray:#6a7282;
+  --color-light-gray:	#8e96a6;
   --color-button-black: #222831;
-  --color-button-light: #F3F4F6;
+  --color-button-gray: #F3F4F6;
 }
 
 .flex-center {
