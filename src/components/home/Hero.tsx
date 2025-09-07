@@ -11,7 +11,7 @@ const Hero: NextPage = () => {
           <h1 className="text-h1">
             Discover Amazing Products
           </h1>
-          <p className="text-body text-light-gray">
+          <p className="text-body text-text-secondary">
             Explore our curated collection of high-quality products. From electronics to clothing, find everything you need in one place.
           </p>
           <div className="flex flex-col gap-2 sm:flex-row">
@@ -32,16 +32,16 @@ const Hero: NextPage = () => {
           <div className="flex gap-4">
             <p>
               <span className="text-body font-semibold">10K+</span><br/>
-              <span className="text-light-gray text-small">Products</span>
+              <span className="text-text-secondary text-small">Products</span>
 
             </p>
             <p>
               <span className="text-body font-semibold">50K+</span><br/>
-              <span className="text-small text-light-gray">Happy Customers</span>
+              <span className="text-small text-text-secondary">Happy Customers</span>
             </p>
             <p>
               <span className="text-body font-semibold">99%</span><br/>
-              <span className="text-light-gray text-small">Satisfaction</span>
+              <span className="text-text-secondary text-small">Satisfaction</span>
             </p>
           </div>
         </div>
@@ -55,11 +55,11 @@ const Hero: NextPage = () => {
             className="object-cover rounded-md"
             priority
           />
-          <div className="card absolute bottom-6 left-6">
+          <div className="card absolute bottom-6 left-6 flex flex-center gap-2">
             <Target className="w-4 h-4" />
             <p>
-                <span>Free Shipping</span><br/>
-                <span>on order over $50</span>
+                <span className="font-bold">Free Shipping</span><br/>
+                <span className="text-text-secondary">on order over $50</span>
             </p>
           </div>
         </div>
