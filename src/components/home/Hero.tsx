@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { Target } from "lucide-react";
 
 const Hero: NextPage = () => {
     return(
@@ -54,8 +55,14 @@ const Hero: NextPage = () => {
             className="object-cover rounded-md"
             priority
           />
+          <div className="card absolute bottom-6 left-6">
+            <Target className="w-4 h-4" />
+            <p>
+                <span>Free Shipping</span><br/>
+                <span>on order over $50</span>
+            </p>
+          </div>
         </div>
-
       </div>
     )
 }

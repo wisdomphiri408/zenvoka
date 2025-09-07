@@ -18,7 +18,7 @@ const InputField: NextPage<InputProps> = ({
     return(
     <input 
     type={type}
-    className={`py-1 px-2 border-1 border-gray-600 rounded-md bg-gray-100 dark:bg-field-backgroung outline-gray-400 ${className}`}
+    className={`input ${className}`}
     value={value}
     onChange={onChange}
     placeholder={placeholder}

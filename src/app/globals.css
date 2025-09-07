@@ -105,12 +105,41 @@
 }
 
 @theme {
-  --color-field-backgroung: #121212;
   --color-dark-border: #2a2a2a;
   --color-light-border:#e5e7eb;
   --color-light-gray:	#8e96a6;
-  --color-button-black: #222831;
-  --color-button-gray: #F3F4F6;
+  
+--color-neutral-50: #f9f9f9;   /* lightest */
+--color-neutral-100: #f3f3f3;
+--color-neutral-200: #e5e5e5;
+--color-neutral-300: #d1d5db;  /* nice light border option */
+--color-neutral-400: #a1a1aa;  /* light gray text */
+--color-neutral-500: #8e96a6;  /* current --color-light-gray */
+--color-neutral-600: #6b7280;  
+--color-neutral-700: #4b5563;  
+--color-neutral-800: #2a2a2a;  /* current --color-dark-border */
+--color-neutral-900: #222831;  /* current --color-neutral-dark / button black */
+
+
+      /*backgrounds*/
+  --color-background-color:var(--color-neutral-50);
+  --color-background-color-dark:var(--color-neutral-900);
+  --color-button-black:var(--color-neutral-900); 
+  --color-input-background: var(--color-neutral-100);
+  --color-input-background-dark:var(--color-neutral-900);
+  --color-button-gray:var(--color-neutral-100);
+}
+
+.input {
+  @apply py-1 px-8 border border-gray-600 rounded-md bg-input-background outline-gray-400;
+}
+
+.dark .input {
+  background-color: var(--color-input-background-dark);
+}
+
+.card{
+  background-color: var(--color-background-color);
 }
 
 .flex-center {
