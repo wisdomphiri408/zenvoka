@@ -10,20 +10,20 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+          "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border border-gray-300 bg-transparent hover:bg-accent hover:text-accent-foreground dark:border-gray-600 dark:hover:bg-input/40",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/40",
         link: "text-primary underline-offset-4 hover:underline",
 
-        inverted: "bg-button-gray text-black dark:bg-button-black dark:text-white border-1 border-gray-500 dark:border-none",
+        inverted: "bg-transparent border border-gray-400 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#1a1a1a]",
 
-        primary: "bg-button-black text-white dark:bg-button-gray dark:text-black",
+        primary: "bg-black text-white dark:bg-white dark:text-black hover:opacity-90",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -31,7 +31,6 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
-      
     },
     defaultVariants: {
       variant: "default",
