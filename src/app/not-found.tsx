@@ -11,7 +11,7 @@ const NotFound: NextPage = () => {
         <div className="flex-center flex-col text-center pt-21">
             <h1 className="text-display-lg text-gray-300 font-bold">404</h1>
             <h2 className="text-h3">Page Not Found</h2>
-            <p className="max-w-[340px] text-body text-gray-500 mb-4">
+            <p className="max-w-[340px] text-body text-light-gray mb-4">
                 Sorry, we couldn&lsquo;t find the page you&lsquo;re looking for. It might have been moved, deleted, or the URL might be incorrect.
             </p>
             <p>
