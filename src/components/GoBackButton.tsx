@@ -9,8 +9,9 @@ const GoBackButton: NextPage = () => {
 
     return(
             <Button
+                variant={"inverted"}
                 onClick={() => router.back()}
-                className="bg-white text-black dark:bg-black dark:text-gray-300 py-5">
+                className="ml-2">
                 <ArrowBigLeftIcon className="h-4 w-4"/> Go Back
             </Button>
     )

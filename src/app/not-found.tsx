@@ -16,7 +16,7 @@ const NotFound: NextPage = () => {
             </p>
             <p>
                 <Link href={'/'}>
-                        <Button className="bg-black text-gray-300 dark:bg-white dark:text-black mr-4">
+                        <Button variant={"primary"}>
                             <Home className="h-4 w-4"/> Home
                         </Button>
                 </Link>
