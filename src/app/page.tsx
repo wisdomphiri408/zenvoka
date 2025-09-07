@@ -23,22 +23,23 @@ export default function Home() {
             <Link href={'/categories'}>
               <Button 
               variant={'inverted'}
-              >Categories</Button>
+              >View Categories</Button>
             </Link>
           </div>
 
-          <div>
+          <div className="flex gap-4">
             <p>
-              <span>10K+</span><br/>
-              Products
+              <span className="text-body font-semibold">10K+</span><br/>
+              <span className="text-light-gray text-small">Products</span>
+
             </p>
             <p>
-              <span >50K+</span><br/>
-              Happy Customers
+              <span className="text-body font-semibold">50K+</span><br/>
+              <span className="text-small text-light-gray">Happy Customers</span>
             </p>
             <p>
-              <span>99%</span><br/>
-              Satisfaction
+              <span className="text-body font-semibold">99%</span><br/>
+              <span className="text-light-gray text-small">Satisfaction</span>
             </p>
           </div>
         </div>
