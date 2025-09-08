@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import FeaturedContent from "@/components/home/FeaturedContent";
 import Hero from "@/components/home/Hero";
 
 export default function Home() {
@@ -9,7 +7,7 @@ export default function Home() {
       {/* Hero section */}
       <Hero />
       <div>
-        <h1 className="text-h3">Featured Cotent</h1>
+      <FeaturedContent />
       </div>
     </div>
   );

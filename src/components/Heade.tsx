@@ -22,7 +22,7 @@ const Header: NextPage = () => {
                 <Link href={'/cart'}>
                     <ShoppingCart className="w-4 h-4"/>
                 </Link>
-                <div className="absolute -top-3 -right-4 bg-black dark:bg-gray-100 dark:text-black text-white text-xs rounded-full px-1.5 py-0.5">3</div>
+                <div className="absolute -top-3 -right-4 bg-black dark:bg-gray-100 dark:text-black text-white text-xs rounded-full px-1.5 py-0.5 animate-pulse">3</div>
                 </div>
                 <Link href={'/profile'}>
                     <User className="w-4 h-4"/>
