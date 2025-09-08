@@ -119,7 +119,7 @@
 
   /*backgrounds*/
   --color-background-color:var(--color-neutral-50);
-  --color-background-color-dark:var(--color-neutral-900);
+  --color-background-color-dark:var(--color-background);
   --color-input-background: var(--color-neutral-100);
   --color-input-background-dark:var(--color-neutral-900);
  
