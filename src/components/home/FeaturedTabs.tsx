@@ -78,12 +78,12 @@ const FeaturedTabs: NextPage = () => {
                 )}
 
                 {activeTab === 'men\'s clothing' && (
-                    <p>This is {'men\'s clothing'}</p>
+                    <p>This is men&apos;s clothing</p>
                 )}
 
                 {activeTab === 'women\'s clothing' && (
                     <p>
-                        This is Women's clothing
+                        This is Women&apos;s clothing
                     </p>
                 )}
             </div>
