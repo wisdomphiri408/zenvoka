@@ -14,7 +14,7 @@ const tabs = [
 
 const FeaturedTabs: NextPage = () => {
     const [activeTab, setActiveTab] = useState<string>('all products');
-    const [dropDown, setDropDown] = useState<Boolean>(false);
+    const [dropDown, setDropDown] = useState<boolean>(false);
 
     return(
         <div className="flex flex-col md:flex-row md:justify-center gap-4">
