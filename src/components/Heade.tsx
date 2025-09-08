@@ -10,7 +10,7 @@ const Header: NextPage = () => {
     return(
         <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center border-b-1 border-border-light dark:border-border-dark py-4 backdrop-blur-2xl px-2 z-10">
             <div>
-                <Link href={'/'} className="text-2xl font-bold ">Zenvoka</Link>
+                <Link href={'/'} className="shiny-text text-2xl font-bold ">Zenvoka</Link>
             </div>
             <HeaderTabs />
             <div>

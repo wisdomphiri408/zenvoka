@@ -161,6 +161,29 @@
 }
 
 
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-text {
+  background: linear-gradient(
+    90deg,
+    #000 0%,
+    #999 50%,
+    #000 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+
 .flex-center {
   @apply flex justify-center items-center;
 }
