@@ -1,26 +1,41 @@
 'use client'
 import { NextPage } from "next";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Funnel,ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
 
+interface Product {
+    id:number;
+    title:string;
+    price:number;
+    images:string[];
+}
+
+interface TabData {
+    [key:string]:Product[];
+}
+
+interface Props {
+    tabData: TabData;
+}
+
 const tabs = [
-    {id: 'all products',label: 'All products'},
+    {id: 'clothes',label: 'Clothes'},
     {id: 'electronics',label: 'Electronics'},
-    {id: 'jewelery',label: 'Jewelery'},
-    {id: "men's clothing",label: "Men's Clothing"},
-    {id: 'women\'s clothing',label: 'Women\'s Clothing'},
+    {id: 'furniture',label: 'Furniture'},
+    {id: "shoes",label: "Shoes"},
+    {id: 'miscalleneous',label: 'Miscalleneous'},
 ]
 
-const FeaturedTabs: NextPage = () => {
-    const [activeTab, setActiveTab] = useState<string>('all products');
-    const [dropDown, setDropDown] = useState<boolean>(false);
+const FeaturedTabs: React.FC<Props> = ({tabData}) => {
+    const [activeTab, setActiveTab] = useState<string>('clothes');
+    const [dropDown, setDropDown] = useState<boolean>(true);
 
 
     return(
-        <div className="flex flex-col md:flex-row md:justify-center gap-4">
+        <div className="flex flex-col lg:flex-row lg:justify-center gap-2">
             {/* Tabs */}
-            <div className="card flex flex-col ">
+            <div className="card flex flex-col lg:w-[min(400px,20vw)]">
             <div className="flex items-center justify-between mb-2">
                 <p className="flex gap-2 items-center">
                     <Funnel className="w-4 h-4" />
@@ -60,32 +75,16 @@ const FeaturedTabs: NextPage = () => {
 
 
             {/* Tabs Content */}
-            <div className="border-2 border-red-500">
-                {activeTab === 'all products' &&(
-                    <p>
-                        Welcome to products tab
-                    </p>
-                )}
-
-                {activeTab === 'electronics' && (
-                    <p>This is electronics</p>
-                )}
-
-                {activeTab === 'jewelery' && (
-                    <p>
-                        This is a jewelery tab
-                    </p>
-                )}
-
-                {activeTab === 'men\'s clothing' && (
-                    <p>This is men&apos;s clothing</p>
-                )}
-
-                {activeTab === 'women\'s clothing' && (
-                    <p>
-                        This is Women&apos;s clothing
-                    </p>
-                )}
+            <div>
+                <div className="grid grid-cols-2 gap-4">
+                {tabData[activeTab]?.map((product) => (
+                    <div key={product.id} className="p-4 border rounded">
+                    <img src={product.images[0]} alt={product.title} />
+                    <h3>{product.title}</h3>
+                    <p>${product.price}</p>
+                    </div>
+                ))}
+                </div>
             </div>
 
         </div>
