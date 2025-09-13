@@ -1,14 +1,15 @@
 'use client'
-import { NextPage } from "next";
 import React, { useState } from "react";
 import { Funnel,ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
+import Image from "next/image";
+import ProductCard from "../ProductCard";
 
 interface Product {
     id:number;
     title:string;
     price:number;
-    images:string[];
+    image:string;
 }
 
 interface TabData {
@@ -20,15 +21,14 @@ interface Props {
 }
 
 const tabs = [
-    {id: 'clothes',label: 'Clothes'},
+    {id: 'men',label: 'Men\'s clothing'},
+    {id: 'women',label: 'Women\'s clothing'},
     {id: 'electronics',label: 'Electronics'},
-    {id: 'furniture',label: 'Furniture'},
-    {id: "shoes",label: "Shoes"},
-    {id: 'miscalleneous',label: 'Miscalleneous'},
+    {id: "jewelery",label: "Jewelery"},
 ]
 
 const FeaturedTabs: React.FC<Props> = ({tabData}) => {
-    const [activeTab, setActiveTab] = useState<string>('clothes');
+    const [activeTab, setActiveTab] = useState<string>('men');
     const [dropDown, setDropDown] = useState<boolean>(true);
 
 
@@ -76,12 +76,10 @@ const FeaturedTabs: React.FC<Props> = ({tabData}) => {
 
             {/* Tabs Content */}
             <div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                 {tabData[activeTab]?.map((product) => (
-                    <div key={product.id} className="p-4 border rounded">
-                    <img src={product.images[0]} alt={product.title} />
-                    <h3>{product.title}</h3>
-                    <p>${product.price}</p>
+                    <div key={product.id}>
+                     <ProductCard product={product}/>
                     </div>
                 ))}
                 </div>
