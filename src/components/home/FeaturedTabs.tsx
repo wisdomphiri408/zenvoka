@@ -10,6 +10,8 @@ interface Product {
     title:string;
     price:number;
     image:string;
+    category:string;
+    description:string;
 }
 
 interface TabData {
