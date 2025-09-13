@@ -78,8 +78,8 @@ const FeaturedTabs: React.FC<Props> = ({ tabData }) => {
 
 
             {/* Product Grid */}
-            <div className="flex-1 m-auto sm:m-0">
-                <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+            <div className="flex-1 mx-2">
+                <div className="grid gap-2 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
                     {tabData[activeTab]?.map((product) => (
                         <div key={product.id}>
                             <ProductCard product={product} />

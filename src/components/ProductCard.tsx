@@ -17,7 +17,7 @@ interface Props {
 
 const ProductCard: NextPage<Props> = ({ product }) => {
     return (
-        <div key={product.id} className="flex flex-col gap-2 p-4 border rounded w-full max-w-[250px]">
+        <div key={product.id} className="flex flex-col gap-2 p-4 border rounded w-full sm:max-w-[250px] ">
             <div className="card aspect-square relative rounded overflow-hidden">
                 <Image
                     src={product.image}
