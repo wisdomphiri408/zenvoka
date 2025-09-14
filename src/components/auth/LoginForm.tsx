@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { NextPage } from "next";
 import InputField from "@/components/Inputfield";
-import { ReactHTMLElement, useState } from "react";
+import { useState } from "react";
+import { ArrowLeft, User, Lock } from "lucide-react";
 
 const LoginForm: NextPage = () => {
     const [userName, setUserName] = useState<string>('');
@@ -11,45 +12,52 @@ const LoginForm: NextPage = () => {
 
 
     return (
-            <form>
+            <form className="flex flex-col gap-4 shadow-2xs inset-shadow-2xs max-w-[500px] m-auto p-4">
                 <h5 className="text-h5">Sign In</h5>
                 <p className="text-small text-text-secondary">Enter your credentials to access your account</p>
 
-                <div>
-                    <label>Username</label>
+                <div className="flex flex-col gap-2 border-b-2 border-border-light pb-4 dark:border-border-dark">
+                    <div className="flex flex-col items-start">
+                    <label className="text-body">Username</label>
                     <InputField
                     type="text"
-                    className=""
+                    className="w-full"
                     value={userName}
                     placeholder="Enter your username"
                     onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setUserName(e.target.value)}
                     />
-
-                    <label>Password</label>
+                    </div>
+                    <div className="flex flex-col items-start">
+                    <label className="text-body">Password</label>
                     <InputField
                     type="password"
                     placeholder="Enter your password"
-                    className=""
+                    className="w-full"
                     value={password}
-                    onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setPassword(e.target.value)}                    />
-                <Button
-                variant={"primary"}
-                >
-                    Sign In
-                </Button>
+                    onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setPassword(e.target.value)}                    
+                    />
+                    </div>
+                    <Button
+                    variant={"primary"}
+                    >
+                        Sign In
+                    </Button>
                 </div>
 
-                <div>
+                <div className="flex flex-col gap-2">
                     <p className="text-small text-text-secondary">Don't have an account? Try our demo:</p>
                     <Button
                     variant={"inverted"}
                     >
                         Use Demo Account
                     </Button>
-                    <p className="text-small text-text-secondary">Username: mor_2314 | Password: 83r5^_</p>
+                    <p className="text-sm text-text-secondary">Username: mor_2314 | Password: 83r5^_</p>
 
                     <div>
-                        <Button>Go To Home</Button>
+                        <Button className="font-semibold">
+                            <ArrowLeft className="w-4 h-4"/>
+                            Back To Home
+                        </Button>
                     </div>
                 </div>
             </form>

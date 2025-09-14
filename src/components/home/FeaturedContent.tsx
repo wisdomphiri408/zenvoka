@@ -4,7 +4,7 @@ import FeaturedTabs from "./FeaturedTabs";
 
 const fetchProductsByCategory = async (category: string) => {
   try {
-    const res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+    const res = await fetch(`https://fakestoreapi.com/products/category/${category}`,{next: {revalidate:3600}});
     if (!res.ok) {
       throw new Error('Server Error');
     }
