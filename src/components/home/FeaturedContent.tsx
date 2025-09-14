@@ -40,6 +40,11 @@ const FeaturedContent: NextPage = async () => {
   }
 
   const tabData = {
+    all: [
+      ...results[0].data, // men
+      ...results[2].data, // electronics
+      ...results[3].data, // jewelery
+    ],
     men: results[0].data,
     women: results[1].data,
     electronics: results[2].data,

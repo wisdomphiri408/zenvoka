@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Funnel, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
-import Image from "next/image";
 import ProductCard from "../ProductCard";
 
 interface Product {
@@ -23,6 +22,7 @@ interface Props {
 }
 
 const tabs = [
+    {id:'all',label:'All products'},
     { id: 'men', label: 'Men\'s clothing' },
     { id: 'women', label: 'Women\'s clothing' },
     { id: 'electronics', label: 'Electronics' },
@@ -30,7 +30,7 @@ const tabs = [
 ]
 
 const FeaturedTabs: React.FC<Props> = ({ tabData }) => {
-    const [activeTab, setActiveTab] = useState<string>('men');
+    const [activeTab, setActiveTab] = useState<string>('all');
     const [dropDown, setDropDown] = useState<boolean>(true);
 
 
