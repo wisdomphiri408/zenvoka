@@ -38,7 +38,7 @@ const FeaturedTabs: React.FC<Props> = ({ tabData }) => {
         <div className="flex flex-col lg:flex-row lg:justify-center gap-2 m-auto">
             {/* Tabs */}
             <div>
-                <div className="card flex flex-col lg:w-[min(400px,20vw)]">
+                <div className="card flex flex-col lg:w-[min(400px,20vw)] sticky top-20">
                     <div className="flex items-center justify-between mb-2">
                         <p className="flex gap-2 items-center">
                             <Funnel className="w-4 h-4" />
