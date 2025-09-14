@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { Star, StarHalf } from "lucide-react";
+import { Star, ShoppingCartIcon } from "lucide-react";
 
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
 
 const ProductCard: NextPage<Props> = ({ product }) => {
     return (
-        <div key={product.id} className="flex flex-col gap-2 p-4 border rounded w-full sm:max-w-[250px] ">
+        <div key={product.id} className="flex flex-col gap-2 p-4 border border-border-light dark:border-border-dark rounded-2xl w-full sm:max-w-[250px] ">
             <div className="card aspect-square relative rounded overflow-hidden">
                 <Image
                     src={product.image}
@@ -29,17 +29,15 @@ const ProductCard: NextPage<Props> = ({ product }) => {
                 />
             </div>
             <div className="flex items-center mt-2 mb-1 space-x-2">
-                <p className="text-sm bg-gray-100 rounded-full dark:bg-background-color-dark px-2">{product.category}</p>
+                <p className="text-sm bg-gray-100 rounded-full dark:bg-background-color-dark px-2 border border-border-light dark:border-border-dark">{product.category}</p>
+
                 <div className="flex items-center ml-auto">
                     <Star className="w-4 h-4 fill-amber-400 dark:fill-amber-300" />
-                    <Star className="w-4 h-4 fill-amber-400 dark:fill-amber-300" />
-                    <Star className="w-4 h-4 fill-amber-400 dark:fill-amber-300" />
-                    <Star className="w-4 h-4 fill-amber-400 dark:fill-amber-300" />
-                    <StarHalf className="w-4 h-4 fill-amber-400 dark:fill-amber-300" />
+                    <p className="text-sm">4.7</p>
                 </div>
             </div>
             <div>
-                <p className="text-body">{product.title}</p>
+                <p className="text-body line-clamp-2">{product.title}</p>
             </div>
             <div className="flex items-center justify-between ">
                 <p className="text-body font-bold">${product.price}</p>
@@ -47,7 +45,9 @@ const ProductCard: NextPage<Props> = ({ product }) => {
                     <Button
                         variant={"primary"}
                         className="p-2"
-                    >Add</Button>
+                    >
+                        <ShoppingCartIcon className="w-4 h-4"/>
+                        Add</Button>
                 </p>
             </div >
         </div >

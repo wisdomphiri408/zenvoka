@@ -47,7 +47,7 @@ const FeaturedContent: NextPage = async () => {
   };
 
   return (
-    <div>
+    <div className="max-w-[1500px] m-auto">
       <div className="text-center my-6 p-6">
         <h3 className="text-h3">Featured Products</h3>
         <p className="text-text-secondary">
