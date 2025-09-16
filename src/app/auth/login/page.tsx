@@ -4,7 +4,7 @@ import { NextPage } from "next";
 
 const Login: NextPage = () => {
     return (
-        <div className="text-center flex flex-col gap-8">
+        <div className="text-center flex flex-col gap-8 px-4">
             <div>
                 <h3 className="text-h3">Welcome back</h3>
                 <p className="text-small text-text-secondary">

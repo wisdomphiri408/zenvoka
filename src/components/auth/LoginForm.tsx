@@ -104,6 +104,7 @@ const LoginForm: NextPage = () => {
                     variant={"primary"}
                     type="submit"
                     disabled = {loading}
+                    className="mt-4"
                     >
                         {loading ? "Signing In ...": "Sign In"}
                     </Button>
