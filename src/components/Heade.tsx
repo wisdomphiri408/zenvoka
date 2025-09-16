@@ -5,8 +5,11 @@ import { ModeToggle } from "./theme-toggle";
 import SearchBar from "./searchBar";
 import HeaderTabs from "./HeaderTabs";
 import { Menu } from "lucide-react";
+import { getSession } from "@/lib/session";
 
-const Header: NextPage = () => {
+const Header: NextPage = async () => {
+    const session = await getSession();
+
     return(
         <div className="flex justify-between md:justify-center md:gap-[var(--gap-fluid)] fixed left-0 top-0 right-0 items-center border-b-1 border-border-light dark:border-border-dark py-4 backdrop-blur-2xl px-2 z-10">
             <div>
@@ -24,9 +27,16 @@ const Header: NextPage = () => {
                 </Link>
                 <div className="absolute -top-3 -right-4 bg-black dark:bg-gray-100 dark:text-black text-white text-xs rounded-full px-1.5 py-0.5 animate-pulse">3</div>
                 </div>
-                <Link href={'/auth/login'}>
-                    <User className="w-4 h-4"/>
+                {session ? (
+                    <div className="relative">
+                      <User className="w-4 h-4"/>
+                      <div className="absolute h-2 w-2 rounded-full bg-green-500 top-[-4] right-[-4]"></div>
+                    </div>
+                ):(
+                    <Link href={'/auth/login'}>
+                      <User className="w-4 h-4"/>
                 </Link>
+                )}
                 <p>
                     <Menu className="block md:hidden w-4 h-4" />
                 </p>
