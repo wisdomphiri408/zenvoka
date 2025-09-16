@@ -6,6 +6,7 @@ type InputProps = {
     value: string;
     onChange: (e:React.ChangeEvent<HTMLInputElement>) => void;
     placeholder: string;
+    required:boolean;
 }
 
 const InputField: NextPage<InputProps> = ({
@@ -14,6 +15,7 @@ const InputField: NextPage<InputProps> = ({
     value, 
     onChange,
     placeholder = '',
+    required = false,
 }) => {
     return(
     <input 
@@ -22,6 +24,7 @@ const InputField: NextPage<InputProps> = ({
     value={value}
     onChange={onChange}
     placeholder={placeholder}
+    required = {required}
     />
     )
 

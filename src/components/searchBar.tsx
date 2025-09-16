@@ -21,6 +21,7 @@ const SearchBar: NextPage = () => {
                 onClick={handleSearch} 
                 className="z-10"/>
                 <InputField 
+                required = {false}
                 type="search"
                 value={search}
                 onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
