@@ -110,7 +110,7 @@ const LoginForm: NextPage = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <p className="text-small text-text-secondary">Don't have an account? Try our demo:</p>
+                    <p className="text-small text-text-secondary">Don&apos;t have an account? Try our demo:</p>
                     <Button
                     variant={"inverted"}
                     onClick={()=>{
