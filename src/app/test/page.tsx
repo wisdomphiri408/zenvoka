@@ -15,7 +15,7 @@ const Test: NextPage = async () => {
 
     console.log(data)
     return(
-        <div>
+        <div className="bg-[#F5F5F5] h-300">
         <div>Test</div>
         <div>
         {session ? (
