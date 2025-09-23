@@ -10,7 +10,7 @@ const Footer: NextPage = () => {
             <div className="px-2 flex flex-col gap-4">
                 <h4 className="text-h4">Zenvoka</h4>
                 <p className="text-text-secondary text-sm md:max-w-[300px]">
-                    Your trusted partner for quality products. We're committed to providing the best shopping experience with excellent customer service.
+                    Your trusted partner for quality products. We&apos;re committed to providing the best shopping experience with excellent customer service.
                 </p>
                 <div className="flex gap-4 items-center">
                     <a 
