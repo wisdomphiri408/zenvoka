@@ -3,6 +3,15 @@ import Link from "next/link";
 import { Instagram, Facebook, Twitter, Github, Linkedin, PhoneCallIcon, MapPin, Mail } from "lucide-react";
 import StayUpdated from "./footer/StayUpdated";
 
+const socialLinks = [
+  { href: "https://web.facebook.com/profile.php?id=61565095888624", icon: Facebook },
+  { href: "https://x.com/WisdomPhir676", icon: Twitter },
+  { href: "https://www.instagram.com/wisdomphiri408/", icon: Instagram },
+  { href: "https://github.com/wisdomphiri408", icon: Github },
+  { href: "https://www.linkedin.com/in/wisdom-phiri-546a4b364", icon: Linkedin },
+];
+
+
 const Footer: NextPage = () => {
     return(
         <div className="card pt-4 ">
@@ -12,52 +21,20 @@ const Footer: NextPage = () => {
                 <p className="text-text-secondary text-sm md:max-w-[300px]">
                     Your trusted partner for quality products. We&apos;re committed to providing the best shopping experience with excellent customer service.
                 </p>
-                <div className="flex gap-4 items-center">
-                    <a 
-                    href="/"
-                    target="_blank"
-                    rel = 'noopener noreferrer'
-                    className="text-text-secondary"
-                    >
-                        <Facebook className="w-4 h-4 cursor-pointer"/>
-                    </a>
+           <div className="flex gap-4 items-center">
+            {socialLinks.map(({ href, icon: Icon }, i) => (
+                <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+                >
+                <Icon className="w-4 h-4 cursor-pointer" />
+                </a>
+            ))}
+            </div>
 
-                    <a 
-                    href="/"
-                    target="_blank"
-                    rel = 'noopener noreferrer'
-                    className="text-text-secondary"
-                    >
-                        <Twitter className="w-4 h-4 cursor-pointer"/>
-                    </a>
-
-                    <a 
-                    href="/"
-                    target="_blank"
-                    rel = 'noopener noreferrer'
-                    className="text-text-secondary"
-                    >
-                        <Instagram className="w-4 h-4 cursor-pointer"/>
-                    </a>
-
-                    <a 
-                    href="/"
-                    target="_blank"
-                    rel = 'noopener noreferrer'
-                    className="text-text-secondary"
-                    >
-                        <Github className="w-4 h-4 cursor-pointer"/>
-                    </a>
-
-                    <a 
-                    href="/"
-                    target="_blank"
-                    rel = 'noopener noreferrer'
-                    className="text-text-secondary">
-                        <Linkedin className="w-4 h-4 cursor-pointer"/>
-                    </a>
-                    
-                </div>
             </div>
 
             {/* Quick Links */}
