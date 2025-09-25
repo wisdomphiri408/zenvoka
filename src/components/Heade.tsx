@@ -6,6 +6,9 @@ import SearchBar from "./searchBar";
 import HeaderTabs from "./HeaderTabs";
 import { Menu } from "lucide-react";
 import { getSession } from "@/lib/session";
+import UserStatusIndicator from "./UserStatusIndicator";
+import CartNotificatiion from "./CartNotification";
+
 
 const Header: NextPage = async () => {
     const session = await getSession();
@@ -25,18 +28,9 @@ const Header: NextPage = async () => {
                 <Link href={'/cart'}>
                     <ShoppingCart className="w-4 h-4"/>
                 </Link>
-                <div className="absolute -top-3 -right-4 bg-black dark:bg-gray-100 dark:text-black text-white text-xs rounded-full px-1.5 py-0.5 animate-pulse">3</div>
+                <CartNotificatiion />
                 </div>
-                {session ? (
-                    <div className="relative">
-                      <User className="w-4 h-4"/>
-                      <div className="absolute h-2 w-2 rounded-full bg-green-500 top-[-4] right-[-4]"></div>
-                    </div>
-                ):(
-                    <Link href={'/auth/login'}>
-                      <User className="w-4 h-4"/>
-                </Link>
-                )}
+                <UserStatusIndicator />
                 <p>
                     <Menu className="block md:hidden w-4 h-4" />
                 </p>

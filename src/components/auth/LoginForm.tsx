@@ -6,8 +6,11 @@ import InputField from "@/components/Inputfield";
 import { useState } from "react";
 import { ArrowLeft, User, Lock, EyeIcon,EyeClosed } from "lucide-react";
 import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
 
 const LoginForm: NextPage = () => {
+    const { setIsLoggedIn } = useAuth();
+
     const [userName, setUserName] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -49,6 +52,7 @@ const LoginForm: NextPage = () => {
         setLoading(false);
         setTimeout(() => setMessage(""), 4000);
 
+        setIsLoggedIn(true);
     }
 
     return (

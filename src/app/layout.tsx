@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Heade";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/context/AuthProvider";
+import { CartProvider } from "@/context/CartProvider";
 
 
 const geistSans = Geist({
@@ -31,18 +33,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <Header />
-        <div className="pt-21 pb-20 flex-grow">
-          {children}
-        </div>
-        <Footer />
-      </ThemeProvider>
+        <AuthProvider>
+          <CartProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Header />
+              <div className="pt-21 pb-20 flex-grow">
+                {children}
+              </div>
+              <Footer />
+            </ThemeProvider>
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
