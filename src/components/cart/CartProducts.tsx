@@ -15,7 +15,7 @@ const CartProducts: NextPage = () => {
             <div className="flex flex-col items-center mt-21 gap-4">
                 <ShoppingCartIcon className="w-10 h-10"/>
                 <h4 className="text-h4">Your cart is empty</h4>
-                <p className="text-sm">Looks like you haven't added any items to your cart yet.</p>
+                <p className="text-sm">Looks like you haven&apos;t added any items to your cart yet.</p>
                 <div>
                     <Link href={'/'}>
                         <GoBackButton />

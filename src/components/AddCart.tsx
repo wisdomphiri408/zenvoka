@@ -4,8 +4,6 @@ import { NextPage } from "next"
 import { Button } from "./ui/button"
 import { ShoppingCartIcon } from "lucide-react"
 import { useCart } from "@/context/CartContext"
-import { title } from "process"
-import { image } from "framer-motion/client"
 
 
 interface Props {
@@ -31,8 +29,6 @@ const AddCart: NextPage <Props>= ({product}) => {
                 },
                 body:JSON.stringify({productId:product.id, userId:1})
             });
-
-            const result = await res.json();
 
             //add product to context
             addToCart({
