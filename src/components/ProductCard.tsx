@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Star, ShoppingCartIcon } from "lucide-react";
+import { Star} from "lucide-react";
+import AddCart from "./AddCart";
 
 
 interface Props {
@@ -23,6 +23,7 @@ const ProductCard: NextPage<Props> = ({ product }) => {
                     src={product.image}
                     alt={product.title}
                     fill
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 250px"
                     style={{ objectFit: 'contain' }}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAH0lEQVR42mP8/5+hP6VQwMDA8J+FhwMDgYGjAwAIHhCqZ8b2swAAAABJRU5ErkJggg=="
@@ -41,14 +42,7 @@ const ProductCard: NextPage<Props> = ({ product }) => {
             </div>
             <div className="flex items-center justify-between ">
                 <p className="text-body font-bold">${product.price}</p>
-                <p>
-                    <Button
-                        variant={"primary"}
-                        className="p-2"
-                    >
-                        <ShoppingCartIcon className="w-4 h-4"/>
-                        Add</Button>
-                </p>
+                <AddCart product={product}/>
             </div >
         </div >
     )

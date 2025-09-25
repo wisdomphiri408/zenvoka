@@ -52,6 +52,7 @@ const Hero: NextPage = () => {
             src="https://images.pexels.com/photos/1020370/pexels-photo-1020370.jpeg"
             alt="hero-image"
             fill
+            sizes="(max-width: 1024px) 100vw, 700px"
             className="object-cover rounded-md"
             priority
           />
