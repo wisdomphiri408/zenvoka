@@ -22,12 +22,10 @@ const AddCart: NextPage <Props>= ({product}) => {
 
     const handleAddToCart = async() =>{
         try{
-            const res = await fetch('/api/add-to-cart',{
-                method:'POST',
-                headers: {
-                    "Content-Type":"application/json",
-                },
-                body:JSON.stringify({productId:product.id, userId:1})
+            await fetch("/api/add-to-cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ productId: product.id, userId: 1 }),
             });
 
             //add product to context

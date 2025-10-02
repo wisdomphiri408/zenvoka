@@ -14,20 +14,20 @@ const OrderSummary: NextPage = () => {
         const { cartItems, setSubtotal, shippingCost } = useCart();
         const router = useRouter();
 
-        if(!cartItems.length) {
-            return null;
-        }
-
         const subtotal = cartItems.reduce(
             (acc, item) => acc + item.price * item.quantity, 0
         );
 
-    useEffect(() => {
-        setSubtotal(subtotal);
-    }, [subtotal, setSubtotal]);
+        useEffect(() => {
+            setSubtotal(subtotal);
+        }, [subtotal, setSubtotal]);
+
+        if(!cartItems.length) {
+            return null;
+        }
 
 
-    return(
+    return (
         <div className={'relative w-full sm:max-w-[600px] lg:max-w-[500px] xl:max-w-[600px] mx-auto lg:mt-20'}>
             <div className={' sticky top-20'}>
                 <div className="card">
@@ -41,10 +41,10 @@ const OrderSummary: NextPage = () => {
                                 className="px-2 flex-1"
                                 required
                                 value={discount}
-                                onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setDiscount(e.target.value)}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDiscount(e.target.value)}
                             />
                             <Button
-                            className="card"
+                                className="card"
                             >
                                 <Tag className="w-4 h4"/>
                             </Button>
@@ -53,7 +53,7 @@ const OrderSummary: NextPage = () => {
                     <div className="flex flex-col gap-2 p-2">
                         <p className="text-sm flex justify-between items-center">
                             Subtotal
-                            <span>${    subtotal.toFixed(2)}</span>
+                            <span>${subtotal.toFixed(2)}</span>
                         </p>
                         <div className="border-b border-border-light dark:border-border-dark pb-2">
                             <div className="text-sm flex justify-between items-center  pb-2">
@@ -72,9 +72,9 @@ const OrderSummary: NextPage = () => {
                                 <span>${(shippingCost + subtotal).toFixed(2)}</span>
                             </p>
                             <Button
-                            variant={'primary'}
-                            className="text-sm"
-                            onClick={()=> router.push("/cart/checkout")}
+                                variant={'primary'}
+                                className="text-sm"
+                                onClick={() => router.push("/cart/checkout")}
                             >
                                 Proceed To Checkout
                             </Button>
