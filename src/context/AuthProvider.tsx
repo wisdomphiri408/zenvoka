@@ -5,6 +5,7 @@ import { AuthContext } from "./AuthContext";
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState<boolean>(false);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -20,7 +21,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, acceptedTerms, setAcceptedTerms }}>
       {children}
     </AuthContext.Provider>
   );

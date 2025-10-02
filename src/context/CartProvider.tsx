@@ -8,6 +8,7 @@ export const CartProvider = ({children}:{children:ReactNode}) => {
     const [subtotal, setSubtotal] = useState(0);
     const [shippingCost, setShippingCost] = useState(0);
     const [tax, setTax] = useState(15.0);
+    const [shippingType, setShippingType] = useState<string>('none');
 
     const addToCart = (item: cartItem) => {
         setCartItems(prev => {
@@ -43,7 +44,7 @@ export const CartProvider = ({children}:{children:ReactNode}) => {
     const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
     return(
-        <CartContext.Provider value={{cartCount, addToCart, removeFromCart, cartItems, decreaseQuantity, subtotal, setSubtotal, shippingCost, setShippingCost, tax, setTax}}>
+        <CartContext.Provider value={{cartCount, addToCart, removeFromCart, cartItems, decreaseQuantity, subtotal, setSubtotal, shippingCost, setShippingCost, tax, setTax, shippingType, setShippingType}}>
             {children}
         </CartContext.Provider>
     )

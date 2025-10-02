@@ -8,9 +8,11 @@ import React from "react";
 import BillingInfo from "@/components/checkout/BillingInfo";
 import ShippingMethod from "@/components/checkout/ShippingMethod";
 import PaymentMethod from "@/components/checkout/PaymentMethod";
+import {useAuth} from "@/context/AuthContext";
 
 const OrderDetails : NextPage = () => {
     const {cartItems} = useCart();
+    const {setAcceptedTerms} = useAuth();
 
 
     if(cartItems.length === 0){
@@ -43,6 +45,7 @@ const OrderDetails : NextPage = () => {
                     type={'checkbox'}
                     id={'terms'}
                     className="w-4 h-4"
+                    onChange={(e) => setAcceptedTerms(e.target.checked)}
                 />
                 <label htmlFor="terms" className="text-sm">
                     I agree to the
