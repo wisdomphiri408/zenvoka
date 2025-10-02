@@ -1,9 +1,11 @@
 'use client'
-import { createContext, SetStateAction, useContext } from "react";
+import React, { createContext, SetStateAction, useContext } from "react";
 
 interface CreateContextType {
     isLoggedIn: boolean;
     setIsLoggedIn: React.Dispatch<SetStateAction<boolean>>;
+    acceptedTerms: boolean;
+    setAcceptedTerms: (state: boolean) => void;
 }
 
 export const AuthContext = createContext<CreateContextType | undefined>(undefined);

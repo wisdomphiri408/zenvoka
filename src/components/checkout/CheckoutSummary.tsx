@@ -1,13 +1,16 @@
 'use client';
 
 import {NextPage} from "next";
-import {useState} from "react";
-import {Truck, Lock, Star, CircleCheckBig, Shield} from "lucide-react";
+import {Lock, Star, CircleCheckBig, Shield} from "lucide-react";
+import EstimatedDelivery from "./EstimatedDelivery";
 import {Button} from "@/components/ui/button";
 import {useCart} from "@/context/CartContext";
+import {useAuth} from "@/context/AuthContext";
+
 
 const CheckoutSummary: NextPage = () => {
     const {cartItems, subtotal, shippingCost, tax} = useCart();
+    const {acceptedTerms} = useAuth();
 
     if(cartItems.length === 0) return  null;
 
@@ -38,15 +41,12 @@ const CheckoutSummary: NextPage = () => {
                 </div>
 
                 <div className={'flex flex-col gap-4'}>
-                    <Button
-                        variant={'inverted'}
-                        className={'text-xs text-text-secondary mt-2'}>
-                        <Truck className={'w-4 h-4 inline-block mr-1'}/>
-                        Estimated delivery in 5-7 business days
-                    </Button>
+
+                    <EstimatedDelivery />
 
                     <Button
                     variant={'primary'}
+                    disabled={!acceptedTerms}
                     >
                         <Lock className={'w-4 h-4 inline-block mr-1'}/>
                         Place Order

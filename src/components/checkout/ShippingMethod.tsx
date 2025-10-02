@@ -5,7 +5,7 @@ import {useState} from "react";
 import {useCart} from "@/context/CartContext";
 
 const ShippingMethod: NextPage = () => {
-    const {setShippingCost} = useCart();
+    const {setShippingCost, setShippingType} = useCart();
 
     const [selectedMethod, setSelectedMethod] = useState('none');
     const methods = [
@@ -38,6 +38,7 @@ const ShippingMethod: NextPage = () => {
     const HandleShipping = (name:string, cost:number) => {
         setSelectedMethod(name);
         setShippingCost(cost);
+        setShippingType(name);
     }
 
     return (

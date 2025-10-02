@@ -23,6 +23,8 @@ interface CreateContextType {
     setShippingCost: (shipping:number) => void;
     tax: number;
     setTax: (tax:number) => void;
+    shippingType: string;
+    setShippingType: (shippingType:string) => void;
 }
 
 export const CartContext = createContext<CreateContextType | undefined>(undefined);
