@@ -17,7 +17,12 @@ interface CreateContextType {
     removeFromCart: (id:number) => void;
     decreaseQuantity: (id: number) => void;
     cartCount: number;
-
+    subtotal: number;
+    setSubtotal: (total:number) => void;
+    shippingCost: number;
+    setShippingCost: (shipping:number) => void;
+    tax: number;
+    setTax: (tax:number) => void;
 }
 
 export const CartContext = createContext<CreateContextType | undefined>(undefined);

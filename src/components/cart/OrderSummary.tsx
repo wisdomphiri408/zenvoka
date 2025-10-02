@@ -2,14 +2,17 @@
 
 import { NextPage } from "next";
 import InputField from "../Inputfield";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "@/context/CartContext";
 import { Truck, Tag } from "lucide-react";
 import { Button } from "../ui/button";
+import {useRouter} from "next/navigation";
 
 const OrderSummary: NextPage = () => {
         const [discount, setDiscount] = useState('');
-        const { cartItems } = useCart();
+
+        const { cartItems, setSubtotal, shippingCost } = useCart();
+        const router = useRouter();
 
         if(!cartItems.length) {
             return null;
@@ -17,7 +20,12 @@ const OrderSummary: NextPage = () => {
 
         const subtotal = cartItems.reduce(
             (acc, item) => acc + item.price * item.quantity, 0
-        )
+        );
+
+    useEffect(() => {
+        setSubtotal(subtotal);
+    }, [subtotal, setSubtotal]);
+
 
     return(
         <div className={'relative w-full sm:max-w-[600px] lg:max-w-[500px] xl:max-w-[600px] mx-auto lg:mt-20'}>
@@ -45,7 +53,7 @@ const OrderSummary: NextPage = () => {
                     <div className="flex flex-col gap-2 p-2">
                         <p className="text-sm flex justify-between items-center">
                             Subtotal
-                            <span>${subtotal.toFixed(2)}</span>
+                            <span>${    subtotal.toFixed(2)}</span>
                         </p>
                         <div className="border-b border-border-light dark:border-border-dark pb-2">
                             <div className="text-sm flex justify-between items-center  pb-2">
@@ -53,7 +61,7 @@ const OrderSummary: NextPage = () => {
                                     <Truck className="w-4 h-4"/>
                                     Shipping
                                 </div>
-                                <span>$9.99</span>
+                                <span>{shippingCost}</span>
                             </div>
                             <p className="text-xs text-text-secondary">Free shipping on orders over $100</p>
                         </div>
@@ -61,11 +69,12 @@ const OrderSummary: NextPage = () => {
                         <div className="flex flex-col gap-10">
                             <p className="flex justify-between items-center text-sm">
                                 Total
-                                <span>${(9.99 + subtotal).toFixed(2)}</span>
+                                <span>${(shippingCost + subtotal).toFixed(2)}</span>
                             </p>
                             <Button
                             variant={'primary'}
                             className="text-sm"
+                            onClick={()=> router.push("/cart/checkout")}
                             >
                                 Proceed To Checkout
                             </Button>
