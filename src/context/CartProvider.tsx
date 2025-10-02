@@ -5,12 +5,15 @@ import { ReactNode, useState } from "react";
 
 export const CartProvider = ({children}:{children:ReactNode}) => {
     const [cartItems, setCartItems] = useState<cartItem[]>([]);
+    const [subtotal, setSubtotal] = useState(0);
+    const [shippingCost, setShippingCost] = useState(0);
+    const [tax, setTax] = useState(15.0);
 
     const addToCart = (item: cartItem) => {
         setCartItems(prev => {
             const existing = prev.find(p => p.id === item.id);
             if(existing) {
-                //increase qauntity instead of adding duplicate
+                //increase quantity instead of adding duplicate
                 return prev.map(p =>
                     p.id === item.id ? { ...p, quantity:p.quantity + 1 } : p
                 );
@@ -40,7 +43,7 @@ export const CartProvider = ({children}:{children:ReactNode}) => {
     const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
     return(
-        <CartContext.Provider value={{cartCount, addToCart, removeFromCart, cartItems, decreaseQuantity}}>
+        <CartContext.Provider value={{cartCount, addToCart, removeFromCart, cartItems, decreaseQuantity, subtotal, setSubtotal, shippingCost, setShippingCost, tax, setTax}}>
             {children}
         </CartContext.Provider>
     )

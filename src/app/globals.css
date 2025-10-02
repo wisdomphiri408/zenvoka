@@ -137,29 +137,34 @@
    --color-button-black:var(--color-neutral-900); 
 }
 
-.input {
-  @apply py-1 border border-border-light rounded-md bg-input-background outline-gray-400;
-}
 
-.dark .input {
-  background-color: var(--color-input-background-dark);
-  border:1px solid var(--color-border-dark);
-}
 
-.card {
-  background-color: var(--color-background-color);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border-light); /* full border declaration */
-  border-radius: 6px;
-  padding: 0.5rem; /* adjust padding as needed */
-}
 
-.dark .card {
-  background-color: var(--color-background-color-dark);
-  color: var(--color-neutral-50); /* readable text in dark mode */
-  border: 1px solid var(--color-border-dark);
-}
 
+@layer components {
+    .card {
+        background-color: var(--color-background-color);
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border-light); /* full border declaration */
+        border-radius: 6px;
+        padding: 0.5rem; /* adjust padding as needed */
+    }
+
+    .dark .card {
+        background-color: var(--color-background-color-dark);
+        color: var(--color-neutral-50); /* readable text in dark mode */
+        border: 1px solid var(--color-border-dark);
+    }
+
+    .input {
+        @apply py-1 border border-border-light rounded-md bg-input-background outline-gray-400;
+    }
+
+    .dark .input {
+        background-color: var(--color-input-background-dark);
+        border:1px solid var(--color-border-dark);
+    }
+}
 
 @keyframes shine {
   0% {
